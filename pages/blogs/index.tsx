@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { InferGetServerSidePropsType } from 'next'
 import Link from 'next/link'
+import styles from './_.module.scss'
 
 type Data = { }
 
@@ -22,7 +23,9 @@ function Page({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) 
   const [stData, setstData] = useState(data)
   return (
     <main>
-      <h1>{stData.minrate} This blogs page</h1>
+      <h1 className={styles.fixload}>
+        <span className={styles.fixloadtitle}>is ced</span> {stData.minrate} This blogs page
+      </h1>
       <Link href="/"><a>Home page</a></Link>
     </main>
   )
